@@ -9,7 +9,8 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
-    return []
+    a = the_list[0, -2]
+    return ([a])
 
 
 # write a function that returns part of "the_list" between indices given by the
