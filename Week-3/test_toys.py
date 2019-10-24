@@ -9,7 +9,7 @@ import unittest
 import unittest.mock
 import io
 
-import toys as toys
+import red as toys
 
 class TestSum(unittest.TestCase):
     def test_inc(self):
