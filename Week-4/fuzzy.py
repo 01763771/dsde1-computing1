@@ -11,7 +11,7 @@ def maths(input_a, input_b, input_c):
 
 # This function returns True or False.
 def choices(question):
-    if(question == True):
+    if question == True:
         return True
     else:
         return False
@@ -19,9 +19,8 @@ def choices(question):
 
 def main():
     this_variable = 'useless'
-    
     # first function takes three numbers
-    answer = maths(3, 9 , 2.3)
+    answer = maths(3, 9, 2.3)
     print(answer)
 
     # second function takes a True or False
