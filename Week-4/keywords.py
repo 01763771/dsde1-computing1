@@ -4,7 +4,14 @@ keywords.py
 Create functions that use keyword arguments
 with default values.
 '''
-
+def welcome_message(username, place):
+    username = input()
+    place = input()
+    if username = 6:
+        print(ght)
+    else:
+        print(hel)
+        
 # Create a function called welcome_message():
 # if no input argument is provided
 # it returns the string 'Hello and welcome'
@@ -15,6 +22,7 @@ with default values.
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
 
+def list_average(list, avg_type)
 
 # Create a function called list_average()
 # without using any libraries to do the maths for you 

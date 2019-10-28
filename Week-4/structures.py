@@ -9,6 +9,7 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
+    '''Returns th first and last value of the list.'''
     a = []
     a = a + [the_list[0]]
     a = a + [the_list[-1]]
@@ -21,11 +22,12 @@ def first_and_last(the_list):
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
+    '''Returns part of a list given by paramenters in reverse.'''
     if end < beginning:
         raise ValueError
-    my_list = the_list[beginning:end]
-    my_list.reverse
-
+    else:
+        my_list = the_list[beginning: end]
+        my_list = my_list[::-1]
     return my_list # hint this is incomplete
 
 
@@ -33,10 +35,12 @@ def part_reverse(the_list, beginning, end):
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
+    '''Inserts the the index value three times.'''
     for i in range(3):
-        the_list.append(index)
-        the_list.sort()
-    return the_list
+        new_List = the_list+[index]
+        new_List.sort()
+    return new_List
+
 
 
 # Strings
@@ -44,8 +48,15 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
+    '''Checks whether the word is a pallindrome.'''
+    word = word.lower()
     a = str(word)
-    b = word
+    b = word[::-1]
+    if a != b:
+        return False
+    else:
+        return True
+
     return
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
@@ -53,6 +64,13 @@ def palindrome_word(word):
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
+    '''Checks whether the sentence is a pallindrome.'''
+    a = sentence.lower().strip().replace(" ","")
+    b = a[::-1]
+    if a == b:
+        return True
+    else:
+        return False
     return
 
 # write a function that concatenates two sentences. First the function checks
@@ -63,22 +81,57 @@ def palindrome_sentence(sentence):
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
 def concatenate_sentences(sentenece1, sentence2):
-    return
+    '''Joins two sentences together as long as they start with a capital letter and and ends with certain punctuation.'''
+    a = list(sentenece1.strip())
+    b = list(sentence2.strip())
 
+    condition_1_a = a[0].isupper
+    if a[-1] == '.' or '?' or'!':
+        condition_2_a = True
+    else:
+        condition_2_a = False
+    if condition_1_a and condition_2_a == True:
+        one = 'yes'
+    else:
+        one = 'no'
+        raise ValueError
+
+    condition_1_b = b[0].isupper
+    if b[-1] == '.' or '?' or '!':
+        condition_2_b = True
+    else:
+        condition_2_b = False 
+    if condition_1_b and condition_2_b == True:
+        two = 'yes'
+    else:
+        two = 'no'
+        raise ValueError
+
+    return one+two
 
 # Dictionaries
 
 # write a function that checks whether there is a record with given key in the
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
-    return
+    '''Checks whether there is a record with given key in the dictionary.'''
+    if key in dictionary:
+        return True
+    else:
+        return False
 
 # write a function which checks whether given value is stored in the
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
-    return
+    '''Checks whether a given value is stored in the dictinary.'''
+    if value in dictionary.values():
+        return True
+    else:
+        return False
 
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
-    return
+    '''Combines two dictionaries together.'''
+    dict3 = {**dictionary1, **dictionary2} 
+    return dict3
