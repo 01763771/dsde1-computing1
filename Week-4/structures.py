@@ -1,26 +1,26 @@
 '''
 structures.py
 
-Simple functions performing operations on basic Python data structures.  
+Simple functions performing operations on basic Python data structures.
 '''
 
 # Lists
 
 # write a function that returns a list containig the first and the last element
-# of "the_list". 
+# of "the_list".
 def first_and_last(the_list):
     '''Returns the first and last value of the list.'''
-    a = []
-    a = a + [the_list[0]]
-    a = a + [the_list[-1]]
-    return a
+    my_list = []
+    my_list = my_list + [the_list[0]]
+    my_list = my_list + [the_list[-1]]
+    return my_list
 
 
 # write a function that returns part of "the_list" between indices given by the
 # second and third parameter, respectively. The returned part should be in
-# reverse order than in the original "the_list". 
+# reverse order than in the original "the_list".
 # If "end" is greater then "beginning" or any og the indices is out of the
-# list, raise a "ValueError" exception. 
+# list, raise a "ValueError" exception.
 def part_reverse(the_list, beginning, end):
     '''Returns part of a list given by paramenters in reverse.'''
     if end < beginning:
@@ -33,13 +33,13 @@ def part_reverse(the_list, beginning, end):
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
-# will return [0,1,2,3,3,3,4]. 
+# will return [0,1,2,3,3,3,4].
 def repeat_at_index(the_list, index):
     '''Inserts the the index value three times.'''
     for i in range(3):
-        new_List = the_list+[index]
-        new_List.sort()
-    return new_List
+        new_list = the_list+[index]
+        new_list.sort()
+    return new_list
 
 
 
@@ -50,9 +50,9 @@ def repeat_at_index(the_list, index):
 def palindrome_word(word):
     '''Checks whether the word is a pallindrome.'''
     word = word.lower()
-    a = str(word)
-    b = word[::-1]
-    if a != b:
+    word1 = str(word)
+    word2 = word[::-1]
+    if word1 != word2:
         return False
     else:
         return True
@@ -62,10 +62,10 @@ def palindrome_word(word):
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
-# capital or not. 
+# capital or not.
 def palindrome_sentence(sentence):
     '''Checks whether the sentence is a pallindrome.'''
-    a = sentence.lower().strip().replace(" ","")
+    a = sentence.lower().strip().replace(" ", "")
     b = a[::-1]
     if a == b:
         return True
@@ -79,9 +79,9 @@ def palindrome_sentence(sentence):
 # Keep in mind, that the sentence might have whitespace at the beginning or at
 # the end.  The concatenated sentence must have no white space at the beginning
 # or at the end and the must be exactly one space after the end of the first
-# sentence. 
+# sentence.
 def concatenate_sentences(sentenece1, sentence2):
-    '''Joins two sentences together as long as they start with a capital letter and and ends with certain punctuation.'''
+    '''Joins two sentences together.'''
     a = list(sentenece1.strip())
     b = list(sentence2.strip())
 
@@ -100,7 +100,7 @@ def concatenate_sentences(sentenece1, sentence2):
     if b[-1] == '.' or '?' or '!':
         condition_2_b = True
     else:
-        condition_2_b = False 
+        condition_2_b = False
     if condition_1_b and condition_2_b == True:
         two = 'yes'
     else:
@@ -133,5 +133,5 @@ def value_exists(dictionary, value):
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
     '''Combines two dictionaries together.'''
-    dict3 = {**dictionary1, **dictionary2} 
+    dict3 = {**dictionary1, **dictionary2}
     return dict3

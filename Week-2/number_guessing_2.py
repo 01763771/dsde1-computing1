@@ -1,0 +1,1 @@
+my_input = input('Guess a number between 1 and 10: ')

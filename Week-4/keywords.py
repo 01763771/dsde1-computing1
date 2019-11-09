@@ -24,15 +24,26 @@ def welcome_message(user_name = None, place = None):
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
 
-def list_average(num_list, avg_type = None):
-    if num_list == []:
+def list_average(num_list = None, avg_type = None):
+    if num_list == None or len(num_list) == 0:
         return 0
-    if avg_type == None or avg_type == 'mean':
+    if avg_type == 'mean' or avg_type == None:
         return sum(num_list)/len(num_list)
-    elif avg_type == 'median':
-        s = num_list.sort()
+    if avg_type == 'mode':
+        return max(num_list, key = str(int(num_list.count)))
+    if avg_type == 'median':
         n = len(num_list)
-        return ((sum(s[n//2-1:n//2+1])/ 2.0, s[n//2])[n % 2])
+        num_list.sort()
+        if n == 0:
+            return False
+        if n % 2 == 0:
+            median1 = num_list[n//2]
+            median2 = num_list[n//2 - 1]
+            median = (median1 + median2) / 2
+        else:
+            median = num_list[n//2]
+        return median
+        
         
 
 
